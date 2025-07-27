@@ -1,9 +1,12 @@
-/* Import Google Fonts FIRST if you want them available for your Tailwind config */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600&display=swap'); /* Make sure to import Instrument Sans too if you use it in @theme */
+/* resources/css/app.css */
 
-/* Tailwind CSS directives */
+/* Move your Google Fonts imports to the very top */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600&display=swap');
+
+/* Then, the Tailwind CSS directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Your custom CSS goes here */

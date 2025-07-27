@@ -1,8 +1,8 @@
-  import forms from '@tailwindcss/forms';
-  import typography from '@tailwindcss/typography';
-  import aspectRatio from '@tailwindcss/aspect-ratio';
-  import lineClamp from '@tailwindcss/line-clamp'
-  import containerQueries from '@tailwindcss/container-queries';
+import forms from '@tailwindcss/forms';
+import typography from '@tailwindcss/typography';
+import aspectRatio from '@tailwindcss/aspect-ratio';
+import lineClamp from '@tailwindcss/line-clamp';
+import containerQueries from '@tailwindcss/container-queries';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -22,8 +22,7 @@ export default {
     './resources/**/*.svelte',
   ],
 
-  // ✅ Dark mode strategy (class-based is recommended for full control)
-  darkMode: 'class', // You’ll toggle it via <html class="dark">
+  darkMode: 'class',
 
   theme: {
     extend: {
@@ -36,8 +35,6 @@ export default {
         accent: '#FAB400',
         background: '#FAFAFA',
         muted: '#ECECEC',
-
-        // Dark mode palette (extend further as needed)
         dark: {
           background: '#0F0F0F',
           surface: '#1A1A1A',
@@ -45,8 +42,6 @@ export default {
           text: '#FFFFFF',
         },
       },
-
-      // ✅ Responsive breakpoints (add or override)
       screens: {
         'xs': '480px',
         'sm': '640px',
@@ -55,14 +50,11 @@ export default {
         'xl': '1280px',
         '2xl': '1536px',
       },
-
-      // ✅ Animation keyframes and durations
       animation: {
         fade: 'fadeIn 0.5s ease-in-out',
         bounceSlow: 'bounce 2s infinite',
         slide: 'slideIn 0.3s ease-out',
       },
-
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
@@ -77,10 +69,9 @@ export default {
   },
 
   plugins: [
-    forms(),
-    typography(),
+    forms,
+    typography,
     aspectRatio,
-    lineClamp,
-    containerQueries, 
+    containerQueries,
   ],
 };
