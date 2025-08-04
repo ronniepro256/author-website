@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <!-- Hero Section -->
     <section class="relative bg-background dark:bg-dark-background text-primary dark:text-dark-text pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-16 overflow-hidden">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
             {{-- Text Content (Left on desktop) --}}
@@ -11,20 +12,21 @@
                 <p class="text-lg md:text-xl mb-8 animate-slide">
                     Embark on an epic journey through ancient mysteries and modern-day suspense
                 </p>
-                {{-- Single "Discover More" Button --}}
-                <x-button href="#" class="bg-accent text-primary hover:bg-yellow-600 px-8 py-3 text-lg rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                {{-- "Discover More" Button - LINKED TO BUY PAGE's second section --}}
+                <x-button href="{{ route('buy', 'whispers-of-the-forgotten') }}#echoes-of-the-silent-forest" class="bg-accent text-primary hover:bg-yellow-600 px-8 py-3 text-lg rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
                     Discover More
                 </x-button>
             </div>
             {{-- Image (Right on desktop, round bordered) --}}
             <div class="md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0">
-                <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 box-full overflow-hidden shadow-2xl animate-bounceSlow">
-                    <img src="{{ asset('images/book-cover-2.jpg') }}" alt="Elara Vance" class="absolute inset-0 w-full h-full object-cover">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 box overflow-hidden shadow-2xl animate-bounceSlow">
+                    <img src="{{ asset('images/book-cover-1.jpg') }}" alt="Elara Vance" class="absolute inset-0 w-full h-full object-cover">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Featured Work Section -->
     <section class="py-16 md:py-24 bg-muted dark:bg-dark-surface text-primary dark:text-dark-text">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-serif text-center mb-12">Featured Work: Whispers of the Forgotten</h2>
@@ -40,8 +42,8 @@
                     </p>
                     <div class="flex items-center justify-center md:justify-start mb-6">
                         <span class="text-3xl font-bold text-accent mr-4">$24.99</span>
-                        {{-- Single "Buy Now" Button --}}
-                        <x-button href="#" class="bg-accent text-primary hover:bg-yellow-600 px-6 py-2 text-lg rounded-full shadow-lg transition-all duration-300">
+                        {{-- "Buy Now" Button - LINKED TO BUY PAGE --}}
+                        <x-button href="{{ route('buy', 'whispers-of-the-forgotten') }}" class="bg-accent text-primary hover:bg-yellow-600 px-6 py-2 text-lg rounded-full shadow-lg transition-all duration-300">
                             Buy Now
                         </x-button>
                     </div>
@@ -50,22 +52,20 @@
         </div>
     </section>
 
+    <!-- About The Author Section -->
     <section class="py-16 md:py-24 bg-background dark:bg-dark-background text-primary dark:text-dark-text">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-serif text-center mb-12">About The Author</h2>
-            {{-- Changed to md:flex-row-reverse to put image first on desktop --}}
             <div class="flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-12">
-                {{-- Text Content (Right on desktop) --}}
                 <div class="md:w-2/3 text-center md:text-left mb-8 md:mb-0">
                     <p class="text-lg leading-relaxed mb-6">
                         Elara Vance is a bestselling author renowned for her intricate fantasy worlds and compelling characters. With a background in ancient history, she weaves rich tapestries of myth and legend into her narratives, drawing readers into experiences that linger long after the final page.
                     </p>
-                    {{-- Changed button style to primary accent --}}
+                    {{-- "Read More" Button - LINKED TO ABOUT PAGE --}}
                     <x-button href="{{ route('about') }}" class="bg-accent text-primary hover:bg-yellow-600 px-6 py-3 text-lg rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
                         Read More
                     </x-button>
                 </div>
-                {{-- Image (Left on desktop, round bordered) --}}
                 <div class="md:w-1/3 flex justify-center md:justify-start">
                     <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-xl border-4 border-accent">
                         <img src="{{ asset('images/author.jpg') }}" alt="Elara Vance" class="absolute inset-0 w-full h-full object-cover">
@@ -75,44 +75,46 @@
         </div>
     </section>
 
+    <!-- What Readers Are Saying Section -->
     <section class="py-16 md:py-24 bg-muted dark:bg-dark-surface text-primary dark:text-dark-text">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-serif text-center mb-12">What Readers Are Saying</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <x-card>
-                    <p class="italic mb-4">"An absolutely captivating read! Elara Vance masterfully weaves a tale that keeps you hooked from the first page to the last. A must-read for any fantasy enthusiast."</p>
-                    <p class="font-semibold text-right">-Dr. Evelyn Reed, Literary Critic</p>
+                    <p class="italic mb-4">"A master storyteller who weaves intricate plots with profound emotional depth. Truly captivating!"</p>
+                    <p class="font-semibold text-right">-Sarah J., Avid Reader</p>
                 </x-card>
                 <x-card>
-                    <p class="italic mb-4">"The world-building is simply breathtaking. I felt completely immersed in 'Whispers of the Forgotten' – a true masterpiece of imaginative storytelling."</p>
-                    <p class="font-semibold text-right">-Sarah Chen, Bestselling Author</p>
+                    <p class="italic mb-4">"Her characters jump off the page and into your heart. I felt every emotion, every struggle."</p>
+                    <p class="font-semibold text-right">-David L., Book Club Member</p>
                 </x-card>
                 <x-card>
-                    <p class="italic mb-4">"A thrilling mystery wrapped in a rich fantasy setting. Elara Vance has created a truly unforgettable experience. Highly recommended!"</p>
-                    <p class="font-semibold text-right">-John Doe, Reader</p>
+                    <p class="italic mb-4">"Rarely do you find an author who can make you laugh, cry, and think all at once. Highly recommend!"</p>
+                    <p class="font-semibold text-right">-Emily K., Literary Blogger</p>
                 </x-card>
             </div>
         </div>
     </section>
 
+    <!-- Join Our Reader Community Section -->
     <section class="py-16 md:py-24 bg-background dark:bg-dark-background text-primary dark:text-dark-text">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-serif mb-8">Join Our Reader Community</h2>
             <p class="text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
                 Stay updated with new releases, exclusive content, and special offers directly from the author.
             </p>
-            <form class="max-w-lg mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="text" placeholder="First Name" class="p-3 border border-muted dark:border-dark-muted rounded-lg bg-white dark:bg-dark-surface focus:outline-none focus:ring-2 focus:ring-accent">
-                <input type="email" placeholder="Your Email" class="p-3 border border-muted dark:border-dark-muted rounded-lg bg-white dark:bg-dark-surface focus:outline-none focus:ring-2 focus:ring-accent">
-                <div class="md:col-span-2">
-                    <x-button type="submit" class="w-full bg-accent text-primary hover:bg-yellow-600 px-6 py-3 text-lg rounded-lg shadow-lg transition-all duration-300">
-                        Subscribe
-                    </x-button>
-                </div>
+            <form class="max-w-lg mx-auto flex flex-col sm:flex-row gap-4" action="{{ route('subscribe') }}" method="POST">
+                @csrf {{-- Laravel CSRF token for form submission --}}
+                <input type="text" name="first_name" placeholder="First Name" class="flex-grow p-3 border border-muted dark:border-dark-muted rounded-lg bg-white dark:bg-dark-surface focus:outline-none focus:ring-2 focus:ring-accent">
+                <input type="email" name="email" placeholder="Your Email" class="flex-grow p-3 border border-muted dark:border-dark-muted rounded-lg bg-white dark:bg-dark-surface focus:outline-none focus:ring-2 focus:ring-accent" required>
+                <x-button type="submit" class="bg-accent text-primary hover:bg-yellow-600 px-6 py-3 text-lg rounded-lg shadow-lg transition-all duration-300">
+                    Subscribe
+                </x-button>
             </form>
         </div>
     </section>
 
+    <!-- Connect with Elara Vance Section -->
     <section class="py-16 md:py-24 bg-muted dark:bg-dark-surface text-primary dark:text-dark-text">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-serif mb-8">Connect with Elara Vance</h2>

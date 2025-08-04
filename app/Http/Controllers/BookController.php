@@ -6,13 +6,16 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function show($book_slug)
+    /**
+     * Display the specified book.
+     *
+     * @param  string  $book_slug
+     * @return \Illuminate\View\View
+     */
+    public function show(string $book_slug)
     {
-        $books = [
-            'book-one' => ['title' => 'Book One', 'image' => 'images/book-cover-1.jpg', 'description' => 'A thrilling novel.', 'price' => 19.99],
-            'book-two' => ['title' => 'Book Two', 'image' => 'images/book-cover-2.jpg', 'description' => 'An epic adventure.', 'price' => 24.99],
-        ];
-        $book = $books[$book_slug] ?? abort(404);
-        return view('buy', compact('book'));
+        // In a real application, you would fetch book details from the database
+        // based on the $book_slug here. For now, we'll just pass the slug to the view.
+            return view('buy', ['book_slug' => $book_slug]);
+        }
     }
-}
